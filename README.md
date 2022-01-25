@@ -1,6 +1,6 @@
 # EDPA Fuel
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ae9e6bb3-b10d-4d28-8a1a-889f00f31f9c/deploy-status)](https://app.netlify.com/sites/edpa/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c1a33a8f-026c-451c-a779-68ac5f08e6f0/deploy-status)](https://app.netlify.com/sites/fuelalabama/deploys)
 
 The goal for EDPA’s talent website is, first and foremost, to showcase internships and entry-level opportunities to
 young professional talent in Alabama and to generate applications for the EDPA’s first-ever Fuel Alabama Fellowship,
