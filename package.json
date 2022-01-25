@@ -1,0 +1,18 @@
+{
+  "name": "edpa",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "sass": "^1.49.0",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.2"
+  },
+  "type": "module"
+}
