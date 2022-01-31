@@ -22,7 +22,7 @@
 	.title {
 		display: flex;
 		flex-basis: 70%;
-		justify-content: center;
+		margin-left: 50px;
 	}
 
 	.title > img{
