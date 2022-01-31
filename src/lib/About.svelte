@@ -1,29 +1,31 @@
 <script>
-	// import {onMount} from 'svelte'
-	// let posts = []
-	// const apiUrl = import.meta.env.VITE_API_URL
-	// onMount(async () => {
-	// 	const res = await fetch(`${apiUrl}/wp/v2/posts`)
-	// 	posts = await res.json()
-	// })
-  const section =
-    {
-      title:"About",
-      body: "The goal for EDPA’s talent website is, first and foremost, to showcase internships and entry-level opportunities to young professional talent in Alabama and to generate applications for the EDPA’s first-ever Fuel Alabama Fellowship, a supplemental internship program for the state’s best and brightest interns at compelling companies.",
-      image:"/about.png"
-    }
+import {onMount} from 'svelte'
+	const apiUrl = import.meta.env.VITE_API_URL
+  let post;
+  onMount(async () => {
+  const res = await fetch(`${apiUrl}/wp/v2/pages?slug=about`)
+  const posts = await res.json()
+  post= posts[0]
+  //gets the featured image
+  const imageUrl = post._links["wp:featuredmedia"][0].href;
+  const imgRes = await fetch(`${imageUrl}`)
+  const image = await imgRes.json()
+  post.image = image.source_url
+})
 </script>
-<div id="about" class="section-container">
-  <div class="section-title-wrapper">
-    <div class="section-title">
-      {section.title}
+{#if post}
+  <div id="about" class="section-container">
+    <div class="section-title-wrapper">
+      <div class="section-title">
+        {post.title.rendered}
+      </div>
+      <p class="section-body">{@html post.content.rendered}</p>
     </div>
-    <p class="section-body">{section.body}</p>
+    <div class="image-wrapper">
+      <img alt="about" src={post.image}/>
+    </div>
   </div>
-   <div class="image-wrapper">
-    <img alt="about" src={section.image}/>
-  </div>
-</div>
+{/if}
 <style lang="scss">
   .section-container {
     margin: 0 0 32px 0;
@@ -34,6 +36,9 @@
     right:0;
     top:0;
   }
+  img {
+    max-height: 500px;
+  }
   .section-title-wrapper {
     position: relative;
     display: flex;
@@ -42,7 +47,7 @@
     top: 50px;
     background-color:white;
     padding: 12px 0 0 16px;
-    margin-left: 30%;
+    margin-left: 20%;
     z-index: 2;
   }
   .section-title {

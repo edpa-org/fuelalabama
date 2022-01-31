@@ -1,26 +1,24 @@
 <script>
-	// import {onMount} from 'svelte'
-	// let posts = []
-	// const apiUrl = import.meta.env.VITE_API_URL
-	// onMount(async () => {
-	// 	const res = await fetch(`${apiUrl}/wp/v2/posts`)
-	// 	posts = await res.json()
-	// })
-  const section =
-    {
-      title:"Apply",
-      body: "The goal for EDPA’s talent website is, first and foremost, to showcase internships and entry-level opportunities to young professional talent in Alabama and to generate applications for the EDPA’s first-ever Fuel Alabama Fellowship, a supplemental internship program for the state’s best and brightest interns at compelling companies.",
-    }
+	import {onMount} from 'svelte'
+	const apiUrl = import.meta.env.VITE_API_URL
+  let post;
+  onMount(async () => {
+  const res = await fetch(`${apiUrl}/wp/v2/pages?slug=apply`)
+  const posts = await res.json()
+  post= posts[0]
+})
 </script>
-<div id="apply" class="section-container">
-  <div class="section-title-wrapper">
-    <div class="section-title">
-      {section.title}
+{#if post}
+  <div id="apply" class="section-container">
+    <div class="section-title-wrapper">
+      <div class="section-title">
+        {post.title.rendered}
+      </div>
     </div>
+    <p class="section-body">{@html post.content.rendered}</p>
   </div>
-  <p class="section-body">{section.body}</p>
-</div>
-
+{/if}
+  
 <style lang="scss">
   .section-container {
     max-width:1280px;
@@ -31,7 +29,6 @@
   }
   .section-title-wrapper {
     position: relative;
-    width: 300px;
     height: 118px;
     top: 50px;
     background-color:white;
@@ -46,7 +43,7 @@
     -webkit-text-stroke: 1px #26408f;
   }
 	.section-body {
-    position: absolute;
+    position: relative;
     font-family: 'Gilmer-Light';
     font-size: 18px;
     background-color:white;
@@ -55,7 +52,6 @@
     padding: 16px;
     margin-bottom: 0;
     margin-left: 6%;
-    bottom: -1px;
     text-align: left;
 	}
  
