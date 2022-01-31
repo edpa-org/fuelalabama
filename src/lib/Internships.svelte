@@ -9,7 +9,7 @@
 })
 </script>
 {#if post}
-  <div id="apply" class="section-container">
+  <div id="internships" class="section-container">
     <div class="section-title-wrapper">
       <div class="section-title">
         {post.title.rendered}
