@@ -2,6 +2,7 @@
 	import Apply from '$lib/Apply.svelte'
 	import WhyAlabama from '$lib/WhyAlabama.svelte'
 	import About from '$lib/About.svelte'
+	import Internships from '$lib/Internships.svelte';
 </script>
 
 <svelte:head>
@@ -12,9 +13,6 @@
 	#skyline {
 		width: 100%;
 	}
-	#internships {
-		height: 500px;
-	}
 	img {
 		width: 100%;
 		object-fit: contain;
@@ -23,7 +21,7 @@
 
 <div id='skyline'><img alt='alabama' src="/city.jpeg"/></div>
 <WhyAlabama/>
-<div id='internships'>INTERNSHIPS</div>
+<Internships/>
 <Apply/>
 <About/>
 
