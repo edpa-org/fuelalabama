@@ -11,10 +11,11 @@
 
 <style>
 	#skyline {
-		width: 100%;
+		display: flex;
+		background-color: #1E1C5E;
 	}
 	img {
-		width: 100%;
+		width: 90%;
 		object-fit: contain;
 	}
 </style>
