@@ -75,7 +75,7 @@
     position: relative;
     margin: 0 32px 32px 32px;
     width: 100%;
-    height: 450px;
+    height: auto;
     display: flex;
   }
   .section {
