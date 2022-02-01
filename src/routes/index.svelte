@@ -2,7 +2,8 @@
 	import Apply from '$lib/Apply.svelte'
 	import WhyAlabama from '$lib/WhyAlabama.svelte'
 	import About from '$lib/About.svelte'
-  import Internships from '$lib/Internships.svelte'
+	import Internships from '$lib/Internships.svelte'
+	import Footer from '$lib/Footer.svelte'
 </script>
 
 <svelte:head>
@@ -18,6 +19,7 @@
 		width: 90%;
 		object-fit: contain;
 	}
+
 </style>
 
 <div id='skyline'><img alt='alabama' src="/city.jpeg"/></div>
@@ -25,6 +27,7 @@
 <Internships/>
 <Apply/>
 <About/>
+<Footer/>
 
 
 
