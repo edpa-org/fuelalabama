@@ -5,5 +5,5 @@
 </style>
 
 <div id="footer">
-    <img alt="footer" src="/city.jpeg"/>
+    <img alt="footer" src="/footer.png"/>
 </div>
