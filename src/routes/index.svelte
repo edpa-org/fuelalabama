@@ -4,6 +4,7 @@
 	import About from '$lib/About.svelte'
 	import Internships from '$lib/Internships.svelte'
 	import Footer from '$lib/Footer.svelte'
+
 </script>
 
 <svelte:head>
