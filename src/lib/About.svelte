@@ -14,7 +14,7 @@ import {onMount} from 'svelte'
 })
 </script>
 {#if post}
-  <div id="about" class="section-container">
+  <div id={post.id} class="section-container">
     <div class="section-title-wrapper">
       <div class="section-title">
         {post.title.rendered}

@@ -10,7 +10,7 @@
     {
       title:"Work",
       body: "From 30 Fortune 1000s, of which 16 are Fortune 500s, to more than 700 startups, Alabama has transformed into a top tech market where inventive minds can make their mark.",
-      image: "/alabama.jpg"
+      image: "/work.jpg"
     },
     {
       title:"Live",
