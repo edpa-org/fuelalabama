@@ -1,5 +1,15 @@
 <script>
-	const menu = ['home','internships','apply','about']
+    import {onMount} from 'svelte'
+    const apiUrl = import.meta.env.VITE_API_URL
+    let pages = [];
+    onMount(async () => {
+		const res = await fetch(`${apiUrl}/wp/v2/pages`)
+		pages = await res.json()
+		// TODO filter by navigation custom field, but need WP plugin
+		pages = pages.filter(p => true)
+		pages.sort((a,b) => (a.menu_order > b.menu_order) ? 1 : -1)
+		console.log(pages)
+    })
 	const handleClick = (id) => document?.getElementById(id)?.scrollIntoView(true)
 </script>
 
@@ -44,9 +54,9 @@
 <nav>
 	<div class="title"><img alt='logo' src='/logo.png'/></div>
 	<ul class='menu'>
-		{#each menu as item}
-			<li class='menu' on:click={()=>handleClick(item)}>
-				{item}
+		{#each pages as p}
+			<li class='menu' on:click={()=>handleClick(p.id)}>
+				{p.title.rendered}
 			</li>
 		{/each}
 	</ul>
