@@ -89,8 +89,18 @@
 	p :global(li) {
 		list-style: none;
 		margin-bottom: 20px;
-		font-family: 'Gilmer-Light';
+		font-family: 'Gilmer';
+		font-size: 12px;
 	}
+
+	:global(a) {
+		font-size: 16px;
+		font-family: 'Gilmer-Bold';
+		color: #1E1C5E;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
   .section-container-employers {
 	margin-top: 50px;
     position: relative;
