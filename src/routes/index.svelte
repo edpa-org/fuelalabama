@@ -28,7 +28,6 @@
 </style>
 
 <div id='skyline'><img alt='alabama' src="/city.jpeg"/></div>
-//Todo :Create templates instead of creating similar components and have dynamic url fetches, render pages with order 
 <GreenTitle/>
 <div id="home">
   <Work/>
