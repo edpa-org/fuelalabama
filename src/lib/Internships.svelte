@@ -1,38 +1,38 @@
 <script>
 	import {onMount} from 'svelte'
 	const apiUrl = import.meta.env.VITE_API_URL
-  let post;
+  let page;
 
   onMount(async () => {
 	const res = await fetch(`${apiUrl}/wp/v2/pages?slug=internships`)
-	const posts = await res.json()
-	post= posts[0]
+	const pages = await res.json()
+	page= pages[0]
 
-	const imageUrl = post._links["wp:featuredmedia"][0].href;
+	const imageUrl = page._links["wp:featuredmedia"][0].href;
 	const imgRes = await fetch(`${imageUrl}`)
 	const image = await imgRes.json()
-	post.image = image.source_url
+	page.image = image.source_url
 })
 </script>
 
 <div>
-	<div id="interships" class="section-container-internships">
-			{#if post}
+  {#if page}
+	<div id={page.id} class="section-container-internships">
 				<div>
-					<img alt="internships" src={post.image}/>
+					<img alt="internships" src={page.image}/>
 				</div>
 				<div>
 					<div class="section-title-wrapper-internships">
 						<div class="section-title-internships">
-							{post.title.rendered}
+							{page.title.rendered}
 						</div>
 					</div>
 					<div class="section-body-wrapper">
-						<p class="section-body-internships">{@html post.content.rendered}</p>
+						<p class="section-body-internships">{@html page.content.rendered}</p>
 					</div>
 				</div>
+      </div>
 			{/if}
-	 </div>
 	 <div class="section-container-employers">
 		  <div class="horizontal-line"></div>
 		<div class="section-title-employers-small">
@@ -54,13 +54,13 @@
 <style lang="scss">
   .section-container-internships {
     position: relative;
-	display: flex;
-	margin-right: 20px;
+	  display: flex;
+  	margin-right: 20px;
   }
 
   .section-title-wrapper-internships {
     display: flex;
-	justify-content: flex-end;
+	  justify-content: flex-end;
     background-color: white;
   }
 
@@ -70,6 +70,7 @@
     line-height: 92px;
     color:white;
     -webkit-text-stroke: 2px #05e37a;
+    margin-bottom: 20px;
   }
 
   .section-body-wrapper {

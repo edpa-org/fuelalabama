@@ -4,6 +4,10 @@
 	import About from '$lib/About.svelte'
 	import Internships from '$lib/Internships.svelte'
 	import Footer from '$lib/Footer.svelte'
+	import Work from '$lib/Work.svelte'
+	import Play from '$lib/Play.svelte'
+	import Live from '$lib/Live.svelte'
+	import GreenTitle from '$lib/GreenTitle.svelte'
 
 </script>
 
@@ -24,7 +28,12 @@
 </style>
 
 <div id='skyline'><img alt='alabama' src="/city.jpeg"/></div>
-<WhyAlabama/>
+<GreenTitle/>
+<div id="home">
+  <Work/>
+  <Live/>
+  <Play/>  
+</div>
 <Internships/>
 <Apply/>
 <About/>
