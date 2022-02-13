@@ -5,7 +5,6 @@
     onMount(async () => {
 		const res = await fetch(`${apiUrl}/wp/v2/pages`)
 		pages = await res.json()
-		// TODO filter by navigation custom field, but need WP plugin
 		pages = pages.filter(p => p.is_nav_menu === "true")
 		pages.sort((a,b) => (a.menu_order > b.menu_order) ? 1 : -1)
     })
