@@ -1,3 +1,5 @@
 node_modules
-/.svelte-kit/build
-/.svelte-kit/output
+.svelte-kit/build
+.svelte-kit/output
+.svelte-kit/runtime
+.idea
