@@ -91,8 +91,8 @@
 	text-decoration: none;
     margin-left: 40px;
 
-	.wp-block-rss {
-		margin-left: 0;
+	ul.wp-block-rss {
+		padding: 0;
 	}
   }
 
