@@ -85,7 +85,11 @@
     font-size: 18px;
     background-color:white;
 	text-decoration: none;
+
+	& > p {
+		margin-left: 40px;
 	}
+  }
 
 	p :global(li) {
 		list-style: none;
