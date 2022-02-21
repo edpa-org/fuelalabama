@@ -35,7 +35,7 @@
 		background-color: #1E1C5E;
 	}
 	img {
-		width: 90%;
+		width: 100%;
 		object-fit: contain;
 	}
 
