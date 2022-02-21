@@ -51,7 +51,7 @@
 	 </div>
 </div>
 
-<style lang="scss">
+<style lang="css">
   .section-container-internships {
     position: relative;
 	  display: flex;
@@ -91,11 +91,11 @@
 	text-decoration: none;
     margin-left: 40px;
 
-	& > ul {
+  }
+  	p :global(ul) {
+		list-style: none;
 		padding: 0;
 	}
-  }
-
 	p :global(li) {
 		list-style: none;
 		margin-bottom: 20px;
