@@ -18,7 +18,7 @@
 <div>
   {#if page}
 	<div id={page.id} class="section-container-internships">
-				<div>
+				<div class="section-container-image">
 					<img alt="internships" src={page.image}/>
 				</div>
 				<div>
@@ -58,9 +58,13 @@
   	margin-right: 20px;
   }
 
+  .section-container-image {
+	  margin-right: 40px;
+  }
+
   .section-title-wrapper-internships {
     display: flex;
-	  justify-content: flex-end;
+    justify-content: flex-end;
     background-color: white;
   }
 
@@ -85,9 +89,10 @@
     font-size: 18px;
     background-color:white;
 	text-decoration: none;
+    margin-left: 40px;
 
-	& > p {
-		margin-left: 40px;
+	.wp-block-rss {
+		margin-left: 0;
 	}
   }
 
