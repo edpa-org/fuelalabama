@@ -91,7 +91,7 @@
 	text-decoration: none;
     margin-left: 40px;
 
-	ul.wp-block-rss {
+	& > ul {
 		padding: 0;
 	}
   }
