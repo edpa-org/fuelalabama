@@ -7,6 +7,7 @@
 	import Play from '$lib/Play.svelte'
 	import Live from '$lib/Live.svelte'
 	import GreenTitle from '$lib/GreenTitle.svelte'
+    import Employers from '$lib/Employers.svelte';
 </script>
 
 <script>
@@ -52,6 +53,7 @@
 </div>
 <Internships/>
 <Apply/>
+<Employers/>
 <About/>
 <Footer/>
 
