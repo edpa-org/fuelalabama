@@ -15,14 +15,14 @@ import {onMount} from 'svelte'
 </script>
 {#if page}
   <div id={page.id} class="section-container">
+    <div class="image-wrapper">
+    <img alt="about" src={page.image}/>
+    </div>
     <div class="section-title-wrapper">
       <div class="section-title">
         {page.title.rendered}
       </div>
       <p class="section-body">{@html page.content.rendered}</p>
-    </div>
-    <div class="image-wrapper">
-      <img alt="about" src={page.image}/>
     </div>
   </div>
 {/if}
@@ -39,7 +39,7 @@ import {onMount} from 'svelte'
     position: relative;
     right:0;
     top:0;
-    height: 500px;
+    height: 450px;
   }
   img {
     max-width: 100%;
@@ -72,7 +72,7 @@ import {onMount} from 'svelte'
     margin-bottom: 0;
     margin-left: 15%;
     text-align: left;
-    width: 70%;
+    width: 75%;
 	}
  
 @font-face {

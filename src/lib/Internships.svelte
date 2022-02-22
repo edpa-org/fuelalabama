@@ -58,7 +58,8 @@
     line-height: 92px;
     color:white;
     -webkit-text-stroke: 2px #05e37a;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    margin-top: 8px;
   }
 
   .section-body-wrapper {

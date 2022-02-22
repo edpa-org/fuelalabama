@@ -44,7 +44,6 @@ import {onMount} from 'svelte'
     display: flex;
     flex-flow: column;
     width: 40%;
-    top: 50px;
     background-color:white;
     padding: 12px 0 0 16px;
     margin-left: 20%;
@@ -56,6 +55,7 @@ import {onMount} from 'svelte'
     line-height: 92px;
     color:white;
     -webkit-text-stroke: 1px #05e37a;
+    margin-top:16px;
   }
 	.section-body {
     position: relative;

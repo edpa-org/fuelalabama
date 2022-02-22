@@ -72,7 +72,7 @@ import {onMount} from 'svelte'
     margin-bottom: 0;
     margin-left: 15%;
     text-align: left;
-    width: 70%;
+    width: 75%;
 	}
  
 @font-face {

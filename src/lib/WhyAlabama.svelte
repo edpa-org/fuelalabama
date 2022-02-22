@@ -3,7 +3,7 @@ import {onMount} from 'svelte'
 	const apiUrl = import.meta.env.VITE_API_URL
   let page;
   onMount(async () => {
-  const res = await fetch(`${apiUrl}/wp/v2/pages?slug=live`)
+  const res = await fetch(`${apiUrl}/wp/v2/pages?slug=why-alabama`)
   const pages = await res.json()
   page= pages[0]
   //gets the featured image
@@ -15,14 +15,14 @@ import {onMount} from 'svelte'
 </script>
 {#if page}
   <div id={page.id} class="section-container">
-     <div class="image-wrapper">
-      <img alt="about" src={page.image}/>
-    </div>
     <div class="section-title-wrapper">
       <div class="section-title">
         {page.title.rendered}
       </div>
       <p class="section-body">{@html page.content.rendered}</p>
+    </div>
+    <div class="image-wrapper">
+      <img alt="about" src={page.image}/>
     </div>
   </div>
 {/if}
@@ -39,7 +39,7 @@ import {onMount} from 'svelte'
     position: relative;
     right:0;
     top:0;
-    height: 450px;
+    height: 500px;
   }
   img {
     max-width: 100%;

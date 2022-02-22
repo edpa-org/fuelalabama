@@ -27,37 +27,38 @@
     <div class="button-wrapper">
       <a class='button' rel="external" href="https://www.edpa.org">LEARN MORE AT EDPA.ORG</a>
     </div>
+    <div class="horizontal-line bottom"></div>
 </div>
 
-<style lang="css">
-    .section-container-employers {
-	margin-top: 50px;
+<style lang="scss">
+  .section-container-employers {
+	  margin-top: 50px;
     position: relative;
-	display: flex;
-	flex-direction: column;
-	margin-left: 50px;
-    }
+	  display: flex;
+	  flex-direction: column;
+	  margin-left: 50px;
+  }
 
-    .section-title-wrapper-employers {
+  .section-title-wrapper-employers {
 		display: flex;
 	}
     
-    .section-title-employers {
+  .section-title-employers {
     font-family: 'Gilmer-Bold';
     font-size: 92px;
     line-height: 92px;
     color:white;
-	margin-left: 30px;
+	  margin-left: 30px;
     -webkit-text-stroke: 2px #1E1C5E;
-    }
+  }
     
-    .section-title-employers-small {
+  .section-title-employers-small {
     font-family: 'Gilmer-Heavy';
     font-size: 50px;
     color:#1E1C5E;
-    }
+  }
 
-    .section-body {
+  .section-body {
     font-family: 'Gilmer-Light';
     font-size: 18px;
     line-height: 1.5rem;
@@ -65,23 +66,23 @@
     width: 80%;
 	}
     
-    .button-wrapper {
+  .button-wrapper {
 	  display: flex;
 	  justify-content: center;
 	  margin-bottom: 40px;
-    }
+  }
 
-    a.button {
-	display:inline-block;
-	padding:0.46em 1.6em;
-	border:0.1em solid #000000;
-	border-radius: 5rem;
-	text-decoration:none;
-	font-family:'Gilmer-Light';
-	color:white;
-	text-align:center;
-	background-color: #1E1C5E;
-    }
+  a.button {
+    display:inline-block;
+    padding:0.46em 1.6em;
+    border:0.1em solid #000000;
+    border-radius: 5rem;
+    text-decoration:none;
+    font-family:'Gilmer-Light';
+    color:white;
+    text-align:center;
+    background-color: #1E1C5E;
+  }
 
 	.vertical-line {
 		display: block;
@@ -90,10 +91,14 @@
 	}
 
 	.horizontal-line {
-	position: relative;
-	margin-left: 36px;
-	height: 30px;
-	background-color: #1E1C5E;
+    position: relative;
+    margin-left: 36px;
+    height: 30px;
+	  background-color: #1E1C5E;
+    &.bottom {
+      height: 8px;
+      margin-left: 0;
+    }
 	}
  
 </style>
