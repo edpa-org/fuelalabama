@@ -6,11 +6,6 @@
     const res = await fetch(`${apiUrl}/wp/v2/pages?slug=propelling-alabama`)
     const pages = await res.json()
     page= pages[0]
-    //gets the featured image
-    const imageUrl = page._links["wp:featuredmedia"][0].href;
-    const imgRes = await fetch(`${imageUrl}`)
-    const image = await imgRes.json()
-    page.image = image.source_url
   })
 </script>
 
