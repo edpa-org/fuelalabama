@@ -40,6 +40,7 @@ import {onMount} from 'svelte'
     right:0;
     top:0;
     height: 450px;
+    margin-top: 100px;
   }
   img {
     max-width: 100%;
@@ -51,7 +52,6 @@ import {onMount} from 'svelte'
     display: flex;
     flex-flow: column;
     width: 40%;
-    top: 50px;
     padding: 12px 0 0 16px;
     margin-left: 8%;
   }
