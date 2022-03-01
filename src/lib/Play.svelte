@@ -2,6 +2,7 @@
 import {onMount} from 'svelte'
 	const apiUrl = import.meta.env.VITE_API_URL
   let page;
+  let recreationPage;
   onMount(async () => {
   const res = await fetch(`${apiUrl}/wp/v2/pages?slug=play`)
   const pages = await res.json()
@@ -11,6 +12,10 @@ import {onMount} from 'svelte'
   const imgRes = await fetch(`${imageUrl}`)
   const image = await imgRes.json()
   page.image = image.source_url
+
+  const recreationRequest = await fetch(`${apiUrl}/wp/v2/pages?slug=recreation`)
+  const recreationResponse = await recreationRequest.json()
+  recreationPage = recreationResponse[0]
 })
 </script>
 {#if page}
@@ -20,6 +25,12 @@ import {onMount} from 'svelte'
         {page.title.rendered}
       </div>
       <p class="section-body">{@html page.content.rendered}</p>
+      {#if recreationPage}
+      <div class="section-title">
+        {recreationPage.title.rendered}
+      </div>
+      <p class="section-body">{@html recreationPage.content.rendered}</p>
+      {/if}
     </div>
     <div class="image-wrapper">
       <img alt="about" src={page.image}/>
@@ -70,9 +81,8 @@ import {onMount} from 'svelte'
     line-height: 1.5rem;
     padding: 16px;
     margin-bottom: 0;
-    margin-left: 15%;
     text-align: left;
-    width: 75%;
+    width: 90%;
 	}
  
 @font-face {
