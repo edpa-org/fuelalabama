@@ -70,9 +70,8 @@ import {onMount} from 'svelte'
     line-height: 1.5rem;
     padding: 16px;
     margin-bottom: 0;
-    margin-left: 15%;
     text-align: left;
-    width: 70%;
+    width: 90%;
 	}
  
 @font-face {

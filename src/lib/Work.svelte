@@ -2,6 +2,7 @@
 import {onMount} from 'svelte'
 	const apiUrl = import.meta.env.VITE_API_URL
   let page;
+  let growingIndustryPage;
   onMount(async () => {
   const res = await fetch(`${apiUrl}/wp/v2/pages?slug=work`)
   const pages = await res.json()
@@ -11,6 +12,9 @@ import {onMount} from 'svelte'
   const imgRes = await fetch(`${imageUrl}`)
   const image = await imgRes.json()
   page.image = image.source_url
+
+  const growingIndustryResponse = await fetch(`${apiUrl}/wp/v2/pages?slug=growing-industry`).then(res => res.json())
+  growingIndustryPage = growingIndustryResponse[0]
 })
 </script>
 {#if page}
@@ -23,6 +27,12 @@ import {onMount} from 'svelte'
         {page.title.rendered}
       </div>
       <p class="section-body">{@html page.content.rendered}</p>
+      {#if growingIndustryPage}
+        <div class="section-title">
+          {growingIndustryPage.title.rendered}
+        </div>
+        <p class="section-body">{@html growingIndustryPage.content.rendered}</p>
+      {/if}
     </div>
   </div>
 {/if}
@@ -70,9 +80,8 @@ import {onMount} from 'svelte'
     line-height: 1.5rem;
     padding: 16px;
     margin-bottom: 0;
-    margin-left: 15%;
     text-align: left;
-    width: 75%;
+    width: 100%;
 	}
  
 @font-face {

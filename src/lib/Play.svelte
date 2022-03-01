@@ -13,8 +13,7 @@ import {onMount} from 'svelte'
   const image = await imgRes.json()
   page.image = image.source_url
 
-  const recreationRequest = await fetch(`${apiUrl}/wp/v2/pages?slug=recreation`)
-  const recreationResponse = await recreationRequest.json()
+  const recreationResponse = await fetch(`${apiUrl}/wp/v2/pages?slug=recreation`).then(res => res.json())
   recreationPage = recreationResponse[0]
 })
 </script>
