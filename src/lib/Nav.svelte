@@ -3,7 +3,7 @@
     const apiUrl = import.meta.env.VITE_API_URL
     let pages = [];
     onMount(async () => {
-		const res = await fetch(`${apiUrl}/wp/v2/pages`)
+		const res = await fetch(`${apiUrl}/wp/v2/pages?per_page=20`)
 		pages = await res.json()
 		pages = pages.filter(p => p.is_nav_menu === "true")
 		pages.sort((a,b) => (a.menu_order > b.menu_order) ? 1 : -1)
