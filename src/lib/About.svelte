@@ -30,31 +30,46 @@ import {onMount} from 'svelte'
   .section-container {
     margin: 0 0 32px 0;
     position: relative;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   .image-wrapper {
-    position: absolute;
-    right:0;
-    top:0;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      right:0;
+      top:0;
+    }
   }
   img {
     max-height: 500px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
   .section-title-wrapper {
     position: relative;
     display: flex;
     flex-flow: column;
-    width: 40%;
     background-color:white;
     padding: 12px 0 0 16px;
-    margin-left: 20%;
     z-index: 2;
+    @media screen and (min-width: 768px) {
+      margin-left: 10%;
+      width: 50%;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-left: 20%;
+      width: 40%;
+    }
   }
   .section-title {
     font-family: 'Gilmer-Bold';
     font-size: 92px;
     line-height: 92px;
     color:white;
-    -webkit-text-stroke: 1px #05e37a;
+    -webkit-text-stroke: 2px #05e37a;
     margin-top:16px;
   }
 	.section-body {
