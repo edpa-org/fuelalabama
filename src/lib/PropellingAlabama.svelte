@@ -16,7 +16,7 @@
 <style lang="scss">
   .sections-title {
     font-family: 'Gilmer-Light';
-    font-size: 4.5vw;
+    font-size: 4vw;
     text-align: left;
     text-transform:uppercase;
     color: white;
