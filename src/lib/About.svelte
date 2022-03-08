@@ -48,13 +48,17 @@ import {onMount} from 'svelte'
     padding: 12px 0 0 16px;
     margin-left: 20%;
     z-index: 2;
+    @media (max-width: 820px) {
+      margin-left: 0;
+      width: 60%;
+    }
   }
   .section-title {
     font-family: 'Gilmer-Bold';
-    font-size: 92px;
-    line-height: 92px;
+    font-size: 6vw;
+    line-height: 6vw;
     color:white;
-    -webkit-text-stroke: 1px #05e37a;
+    -webkit-text-stroke: 2px #05e37a;
     margin-top:16px;
   }
 	.section-body {

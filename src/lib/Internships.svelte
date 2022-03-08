@@ -35,11 +35,17 @@
 	  {/if}
 </div>
 
-<style lang="css">
+<style lang="scss">
   .section-container-internships {
     position: relative;
 	  display: flex;
   	margin-right: 20px;
+    @media (max-width: 820px) {
+      flex-flow: column;
+      align-items: flex-end;
+      margin: 0;
+      padding: 16px 0;
+    }
   }
 
   .section-container-image {
@@ -50,16 +56,25 @@
     display: flex;
     justify-content: flex-end;
     background-color: white;
+    @media (max-width: 820px) {
+      justify-content: flex-start;
+    }
   }
 
   .section-title-internships {
     font-family: 'Gilmer-Bold';
-    font-size: 92px;
-    line-height: 92px;
+    font-size: 6vw;
+    line-height: 6vw;
     color:white;
     -webkit-text-stroke: 2px #05e37a;
     margin-bottom: 12px;
     margin-top: 8px;
+    @media (max-width: 820px) {
+      -webkit-text-stroke: 1px #05e37a;
+      font-size: 40px;
+      margin-left: 24px;
+      margin-top: 16px;
+    }
   }
 
   .section-body-wrapper {
@@ -73,9 +88,8 @@
     font-family: 'Gilmer-Light';
     font-size: 18px;
     background-color:white;
-	text-decoration: none;
+	  text-decoration: none;
     margin-left: 40px;
-
   }
   	p :global(ul) {
 		list-style: none;
@@ -96,8 +110,6 @@
 		text-decoration: none;
 	}
 
-
- 
 @font-face {
  font-family: 'Gilmer-Heavy';
   src: url('../public/fonts/Gilmer-Heavy.otf');

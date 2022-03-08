@@ -34,12 +34,25 @@ import {onMount} from 'svelte'
     position: relative;
     width: 90%;
     align-items: flex-start;
+    @media (max-width: 820px) {
+      flex-flow: column;
+      align-items: flex-end;
+      margin: 0;
+      padding: 16px 0;
+      width: 100%;
+      margin-top: 8px;
+    }
   }
   .image-wrapper {
     position: relative;
     right:0;
     top:0;
     height: 500px;
+    @media (max-width: 820px) {
+      height: unset;
+      margin-top: 20px;
+      width: 100%;
+    }
   }
   img {
     max-width: 100%;
@@ -54,13 +67,21 @@ import {onMount} from 'svelte'
     top: 50px;
     padding: 12px 0 0 16px;
     margin-left: 8%;
+    @media (max-width: 820px) {
+      width: 95%;
+      top:0;
+    }
   }
   .section-title {
     font-family: 'Gilmer-Bold';
-    font-size: 92px;
-    line-height: 92px;
+    font-size: 6vw;
+    line-height: 6vw;
     color:white;
-    -webkit-text-stroke: 1px #05e37a;
+    -webkit-text-stroke: 2px #05e37a;
+    @media (max-width: 820px) {
+      -webkit-text-stroke: 1px #05e37a;
+      font-size: 40px;
+    }
   }
 	.section-body {
     position: relative;
@@ -72,6 +93,9 @@ import {onMount} from 'svelte'
     margin-bottom: 0;
     text-align: left;
     width: 90%;
+    @media (max-width: 820px) {
+      margin-bottom: 16px;
+    }
 	}
  
 @font-face {

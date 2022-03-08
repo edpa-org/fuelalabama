@@ -6,6 +6,11 @@
   const res = await fetch(`${apiUrl}/wp/v2/pages?slug=apply`)
   const posts = await res.json()
   post= posts[0]
+  //gets the featured image
+  const imageUrl = post._links["wp:featuredmedia"][0].href;
+  const imgRes = await fetch(`${imageUrl}`)
+  const image = await imgRes.json()
+  post.image = image.source_url
 })
 </script>
 {#if post}
@@ -16,6 +21,9 @@
       </div>
     </div>
     <p class="section-body">{@html post.content.rendered}</p>
+    <div class="image-wrapper">
+      <img alt="apply" src={post.image}/>
+    </div>
   </div>
 {/if}
   
@@ -26,6 +34,9 @@
     background-color: #26408f;
     min-height: 400px;
     position: relative;
+    @media (max-width: 820px) {
+      margin-right:0;
+    }
   }
   .section-title-wrapper {
     position: relative;
@@ -34,13 +45,16 @@
     background-color:white;
     float: right;
     padding: 12px 0 0 16px;
+    @media (max-width: 820px) {
+      padding-right:12px;
+    }
   }
   .section-title {
     font-family: 'Gilmer-Bold';
-    font-size: 92px;
-    line-height: 92px;
+    font-size: 6vw;
+    line-height: 6vw;
     color:white;
-    -webkit-text-stroke: 1px #26408f;
+    -webkit-text-stroke: 2px #26408f;
   }
 	.section-body {
     position: relative;
@@ -54,6 +68,24 @@
     margin-left: 6%;
     text-align: left;
 	}
+  .image-wrapper {
+    position: relative;
+    right:0;
+    top:0;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 6%;
+    @media (max-width: 820px) {
+      height: unset;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
 
 @font-face {
  font-family: 'Gilmer-Light';
