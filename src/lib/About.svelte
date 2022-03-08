@@ -71,6 +71,11 @@ import {onMount} from 'svelte'
     color:white;
     -webkit-text-stroke: 2px #05e37a;
     margin-top:16px;
+    @media screen and (max-width: 820px) {
+      -webkit-text-stroke: 1px #05e37a;
+      font-size: 40px;
+      margin-bottom: 8px;
+    }
   }
 	.section-body {
     position: relative;

@@ -56,7 +56,7 @@
     color:white;
     -webkit-text-stroke: 2px #26408f;
     @media (max-width: 820px) {
-      -webkit-text-stroke: 1px #05e37a;
+      -webkit-text-stroke: 1px #26408f;
     }
   }
 	.section-body {
