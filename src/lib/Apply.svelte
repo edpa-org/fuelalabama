@@ -55,6 +55,9 @@
     line-height: 6vw;
     color:white;
     -webkit-text-stroke: 2px #26408f;
+    @media (max-width: 820px) {
+      -webkit-text-stroke: 1px #05e37a;
+    }
   }
 	.section-body {
     position: relative;
@@ -67,6 +70,9 @@
     margin-bottom: 0;
     margin-left: 6%;
     text-align: left;
+     @media (max-width: 820px) {
+      width: 60%;
+    }
 	}
   .image-wrapper {
     position: relative;
